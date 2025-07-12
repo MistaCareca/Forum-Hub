@@ -1,6 +1,6 @@
-package com.example.demo.perfil;
+package com.example.demo.model.perfil;
 
-import com.example.demo.usuario.Usuario;
+import com.example.demo.model.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

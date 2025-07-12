@@ -1,4 +1,4 @@
-package com.example.demo.topico;
+package com.example.demo.model.topico;
 
 public enum Status {
     DRAFT,

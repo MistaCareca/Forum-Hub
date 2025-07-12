@@ -1,6 +1,6 @@
-package com.example.demo.curso;
+package com.example.demo.model.curso;
 
-import com.example.demo.topico.Topico;
+import com.example.demo.model.topico.Topico;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -20,8 +20,16 @@ public class Curso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "categoria", columnDefinition = "VARCHAR(50)", nullable = false)
     private Categoria categoria;
 
-    @OneToMany(mappedBy = "curso")
+    @OneToMany(mappedBy = "curso", fetch = FetchType.LAZY)
     private List<Topico> topicos;
+
+    public Curso(String nome, Categoria categoria) {
+        this.nome = nome;
+        this.categoria = categoria;
+    }
 }

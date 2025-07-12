@@ -1,19 +1,17 @@
-package com.example.demo.usuario;
+package com.example.demo.model.usuario;
 
-import com.example.demo.perfil.Perfil;
-import com.example.demo.resposta.Resposta;
-import com.example.demo.topico.Topico;
+import com.example.demo.model.perfil.Perfil;
+import com.example.demo.model.resposta.Resposta;
+import com.example.demo.model.topico.Topico;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @Table(name = "usuario")
 @Entity(name = "usuario")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -40,6 +38,7 @@ public class Usuario {
     private List<Resposta> respostas;
 
     public Usuario(DadosUsuario dados) {
+        this.id = dados.id();
         this.nome = dados.nome();
         this.email = dados.email();
         this.senha = dados.senha();

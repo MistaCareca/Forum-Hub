@@ -1,8 +1,7 @@
-package com.example.demo.resposta;
+package com.example.demo.model.resposta;
 
-import com.example.demo.resposta.DadosResposta;
-import com.example.demo.topico.Topico;
-import com.example.demo.usuario.Usuario;
+import com.example.demo.model.topico.Topico;
+import com.example.demo.model.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
